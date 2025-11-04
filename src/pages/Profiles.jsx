@@ -105,6 +105,7 @@ const Profiles = ({ onProfileSelect = null }) => {
     return () => {
       window.removeEventListener('resize', resizeCanvases);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const containerVariants = {

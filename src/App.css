@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+/* 🌆 Desktop / Default (complex trapezium shapes) */
+.first {
+  clip-path: polygon(
+    0 0,
+    30% 0,
+    35% 13%,
+    100% 13%,
+    100% 100%,
+    35% 100%,
+    30% 87%,
+    0 87%
+  );
+  border-radius: 20px 0 0 0;
+  transition: clip-path 0.3s ease-in-out;
+}
+
+.second {
+  clip-path: polygon(
+    0 0,
+    30% 0,
+    35% 17%,
+    100% 17%,
+    100% 100%,
+    0 100%
+  );
+  border-radius: 0 0 20px 20px;
+  transition: clip-path 0.3s ease-in-out;
+}
+
+/* 💻 Tablet View (slightly simplified, less steep) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .first {
+    clip-path: polygon(
+      0 0,
+      28% 0,
+      33% 12%,
+      100% 12%,
+      100% 100%,
+      33% 100%,
+      28% 88%,
+      0 88%
+    );
+  }
+
+  .second {
+    clip-path: polygon(
+      0 0,
+      28% 0,
+      33% 15%,
+      100% 15%,
+      100% 100%,
+      0 100%
+    );
+  }
+}
+
+/* 📱 Mobile View (simple rectangular or slightly rounded) */
+@media (max-width: 640px) {
+  .first {
+    clip-path: none; /* removes complex angles */
+    border-radius: 12px 12px 0 0;
+  }
+
+  .second {
+    clip-path: none;
+    border-radius: 0 0 12px 12px;
+  }
+}

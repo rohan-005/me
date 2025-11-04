@@ -1,11 +1,13 @@
-import React from 'react'
+import Custombg from "../components/bg/Custombg";
 
+// import React, { useRef, useEffect } from 'react';
 const Gamedev = () => {
   return (
-    <div>
-      gamedev
+    <div className="">
+
+      <Custombg/>
     </div>
-  )
-}
+  );
+};
 
 export default Gamedev
