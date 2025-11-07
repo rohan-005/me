@@ -20,37 +20,10 @@ const Custombg = () => {
       {/* Navbar */}
       <Navbar />
       {/* Top Section */}(
-      <div className="first absolute top-7 w-[97%] h-auto lg:h-[60%] bg-white/10 backdrop-blur-2xl rounded-2xl drop-shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-centre  py-10">
+      <div className="first absolute top-7 w-[97%] h-auto lg:h-[60%] bg-white/10 backdrop-blur-2xl rounded-2xl drop-shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-center py-7">
         {/* 🌍 LEFT: Globe */}
-        <div className="hidden lg:flex w-1/3 h-[97%] relative top-0 left-0 ">
-          <div className="absolute inset-0">
-            <GlobeDemo />
-          </div>
-        </div>
-
-        {/* 🎛️ MIDDLE: Buttons */}
-        <div className="flex flex-col items-center justify-center gap-6 w-full lg:w-1/3 my-6 lg:my-10">
-          {/* 🔄 Switch Profile Button */}
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="w-full max-w-xs px-8 py-4 text-lg font-semibold rounded-full bg-linear-to-r from-gray-100 to-gray-300 text-gray-900 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.02] transition-all duration-300"
-          >
-            Switch Profile
-          </button>
-
-          {/* 📄 Download Resume Button */}
-          <a
-            href="/Rohan_Dhanerwal_CV.pdf" // ← Ensure this file exists in /public
-            download="Rohan_Dhanerwal_CV.pdf"
-            className="w-full max-w-xs px-8 py-4 text-lg font-semibold rounded-full border-2 border-gray-200 text-gray-200 hover:bg-gray-200 hover:text-gray-900 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.02] transition-all duration-300 text-center"
-          >
-            Download CV
-          </a>
-        </div>
-
-        {/* 👤 RIGHT: Profile Info */}
-        <div className="container sm:px-6 lg:px-10 pt-10 z-10 relative flex justify-center lg:justify-end items-center w-full lg:w-1/2">
-          <div className="max-w-xl text-center lg:text-right">
+        <div className="container sm:px-6 ml-10 mb-2 z-10 relative flex justify-center lg:justify-end items-center w-full lg:w-170">
+          <div className="max-w-xl text-center lg:text-left">
             {/* Heading */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
               Hi, I'm{" "}
@@ -63,7 +36,7 @@ const Custombg = () => {
             </h1>
 
             {/* Description */}
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed bg-gray-900/30 p-5 sm:p-6 rounded-xl backdrop-blur-sm border border-gray-200/10 shadow-[0_4px_20px_rgba(255,255,255,0.05)]">
+            <p className="mt-2 text-sm sm:text-base md:text-lg w-170 text-gray-200 leading-relaxed bg-gray-900/30 p-5 sm:p-6 rounded-xl backdrop-blur-sm border border-gray-200/10 shadow-[0_4px_20px_rgba(255,255,255,0.05)]">
               Creative Game Developer skilled in building immersive 2D and 3D
               experiences using Unity and Blender. Experienced in developing
               games like{" "}
@@ -78,6 +51,40 @@ const Custombg = () => {
               algorithmic skills, blending technical precision with engaging
               gameplay design.
             </p>
+          </div>
+        </div>
+
+        {/* 🎛️ MIDDLE: Buttons */}
+        <div className="flex flex-col items-center justify-center gap-6 w-full lg:w-1/2 my-6 lg:my-10 lg:mr-90">
+          {/* 🔄 Switch Profile Button */}
+          <button
+            onClick={() => (window.location.href = "/")}
+            className="w-full max-w-xs px-8 py-4 text-lg font-semibold rounded-full bg-linear-to-r from-gray-100 to-gray-300 text-gray-900 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.02] transition-all duration-300"
+          >
+            Switch Profile
+          </button>
+
+          {/* 📄 Download Resume Buttons */}
+          <a
+            href="/Rohan_Dhanerwal_CV.pdf"
+            download="Rohan_Dhanerwal_CV.pdf"
+            className="w-full max-w-xs px-8 py-4 text-lg font-semibold rounded-full border-2 border-gray-200 text-gray-200 hover:bg-gray-200 hover:text-gray-900 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.02] transition-all duration-300 text-center"
+          >
+            Download CV
+          </a>
+          <a
+            href="/Rohan_Dhanerwal_CV.pdf"
+            download="Rohan_Dhanerwal_CV.pdf"
+            className="w-full max-w-xs px-8 py-4 text-lg font-semibold rounded-full border-2 border-gray-200 text-gray-200 hover:bg-gray-200 hover:text-gray-900 shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.02] transition-all duration-300 text-center"
+          >
+            Download CV
+          </a>
+        </div>
+
+        {/* 👤 RIGHT: Profile Info */}
+        <div className="hidden lg:flex w-1/3 h-[97%] absolute right-0 top-10">
+          <div className="absolute inset-0">
+            <GlobeDemo />
           </div>
         </div>
       </div>
