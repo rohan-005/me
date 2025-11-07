@@ -28,6 +28,7 @@
 }
 
 
+
 /* 💻 Tablet */
 @media (min-width: 641px) and (max-width: 1024px) {
   .first {
@@ -45,12 +46,15 @@
 @media (max-width: 640px) {
   .first {
     background: none;
+    backdrop-filter: none;
   }
   .second {
     background: none;
+    backdrop-filter: none;
   }
   .nav {
     background: transparent;
+    backdrop-filter: none;
   }
   .globe{
     display: none;
