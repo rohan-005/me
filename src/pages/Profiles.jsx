@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlobeDemo } from "../components/Globedemo";
+import LiquidChrome from "../components/bg/LiquidCrome";
 
 const Profiles = ({ onProfileSelect = null }) => {
   const navigate = useNavigate();
@@ -43,8 +44,9 @@ const Profiles = ({ onProfileSelect = null }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-300 relative overflow-hidden flex flex-col items-center justify-center text-center px-4 py-10 text-gray-900">
-      <AnimatePresence >
+    <div className="min-h-screen bg-linear-to-r from-blue-900 to-gray-600 relative overflow-hidden flex flex-col items-center justify-center text-center px-4 py-10 text-gray-900">
+    
+      <AnimatePresence>
         {!showTransition && !isMobile ? (
           <motion.div
             key="centerGlobe"
@@ -99,7 +101,6 @@ const Profiles = ({ onProfileSelect = null }) => {
           </motion.div>
         )}
       </AnimatePresence>
-
       {!showTransition && (
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden w-full">
           {[...Array(20)].map((_, i) => (
@@ -145,11 +146,10 @@ const Profiles = ({ onProfileSelect = null }) => {
           ))}
         </div>
       )}
-
       {!showTransition && (
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <motion.h1
-            className="text-5xl sm:text-6xl font-orbitron font-extrabold text-black mb-4 tracking-widest drop-shadow-[0_0_10px_rgba(0,0,0,0.1)]"
+            className="text-5xl sm:text-6xl font-orbitron font-extrabold text-white mb-4 tracking-widest drop-shadow-[0_0_10px_rgba(0,0,0,0.1)]"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -158,7 +158,7 @@ const Profiles = ({ onProfileSelect = null }) => {
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-xl text-gray-700 mb-12 font-vt323 tracking-wide"
+            className="text-lg sm:text-xl text-gray-500 mb-12 font-vt323 tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -200,7 +200,6 @@ const Profiles = ({ onProfileSelect = null }) => {
           </p>
         </div>
       )}
-
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=VT323&family=Audiowide&family=Share+Tech+Mono&family=Creepster&display=swap");
         .font-orbitron {
