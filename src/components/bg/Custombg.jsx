@@ -15,9 +15,7 @@ const Custombg = () => {
 
   const showNotification = (message, type) => {
     setNotification({ show: true, message, type });
-    setTimeout(() => {
-      setNotification({ show: false, message: "", type: "" });
-    }, 4000);
+    setTimeout(() => setNotification({ show: false, message: "", type: "" }), 4000);
   };
 
   const handleFormSubmit = (e) => {
@@ -53,7 +51,6 @@ const Custombg = () => {
       <LiquidChrome baseColor={[0, 0, 0.05]} speed={0.1} amplitude={0.1} interactive={true} />
       <Navbar />
 
-      {/* Notification */}
       {notification.show && (
         <div className={`notification ${notification.type}`}>
           <div className="flex items-center gap-3">
@@ -71,7 +68,6 @@ const Custombg = () => {
         </div>
       )}
 
-      {/* First Section */}
       <div className="first-section first">
         <div className="first-section-container">
           <div className="first-section-text">
@@ -92,33 +88,15 @@ const Custombg = () => {
               </span>
             </h1>
             <p className="first-section-desc">
-              Creative Game Developer skilled in building immersive 2D and 3D experiences using Unity, Blender, and Mixamo. Experienced in developing games like <span className="font-semibold text-red-500">The Heist Sprint</span> (reflex-based mini-game) and <span className="font-semibold text-red-500">The Timber Curse</span> (psychological survival horror). Strong background in C#, C++, and Java with solid problem-solving and algorithmic skills, blending technical precision with engaging gameplay design.
+              Creative Game Developer skilled in building immersive 2D and 3D experiences using Unity, Blender, and Mixamo. Experienced in developing games like <span className="font-semibold text-red-500">The Heist Sprint</span> and <span className="font-semibold text-red-500">The Timber Curse</span>. Strong background in C#, C++, and Java with solid problem-solving and algorithmic skills.
             </p>
           </div>
         </div>
 
         <div className="buttons-container">
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="switch-profile-btn"
-          >
-            Switch Profile
-          </button>
-
-          <a
-            href="/Rohan_Dhanerwal_CV.pdf"
-            download="Rohan_Dhanerwal_CV.pdf"
-            className="download-cv-btn"
-          >
-            Download CV
-          </a>
-
-          <button
-            onClick={() => setShowContactModal(true)}
-            className="contact-btn"
-          >
-            Contact Me
-          </button>
+          <button onClick={() => (window.location.href = "/")} className="switch-profile-btn">Switch Profile</button>
+          <a href="/Rohan_Dhanerwal_CV.pdf" download className="download-cv-btn">Download CV</a>
+          <button onClick={() => setShowContactModal(true)} className="contact-btn">Contact Me</button>
         </div>
 
         <div className="globe-container">
@@ -130,14 +108,9 @@ const Custombg = () => {
       {showContactModal && (
         <div className="contact-modal-backdrop" onClick={() => setShowContactModal(false)}>
           <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setShowContactModal(false)}
-              className="contact-modal-close"
-              disabled={isSending}
-            >
+            <button onClick={() => setShowContactModal(false)} className="contact-modal-close" disabled={isSending}>
               &times;
             </button>
-
             <div className="text-center mb-6">
               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,49 +122,16 @@ const Custombg = () => {
             </div>
 
             <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  className="contact-input"
-                  required
-                  disabled={isSending}
-                />
-              </div>
-
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  className="contact-input"
-                  required
-                  disabled={isSending}
-                />
-              </div>
-
-              <div className="relative">
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  className="contact-input contact-textarea"
-                  required
-                  disabled={isSending}
-                ></textarea>
-              </div>
-
-              <button type="submit" disabled={isSending} className="send-btn">
-                {isSending ? "Sending..." : "Send Message"}
-              </button>
+              <input type="text" name="name" placeholder="Your Name" className="contact-input" required disabled={isSending} />
+              <input type="email" name="email" placeholder="Your Email" className="contact-input" required disabled={isSending} />
+              <textarea name="message" placeholder="Your Message" className="contact-input contact-textarea" required disabled={isSending}></textarea>
+              <button type="submit" disabled={isSending} className="send-btn">{isSending ? "Sending..." : "Send Message"}</button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-gray-900 text-sm">
                 Or email me directly at{" "}
-                <span className="text-blue-400 hover:text-blue-300 transition-colors duration-200 cursor-pointer">
-                  rohandhanerwal@gmail.com
-                </span>
+                <span className="text-blue-400 hover:text-blue-300 cursor-pointer">rohandhanerwal@gmail.com</span>
               </p>
             </div>
           </div>

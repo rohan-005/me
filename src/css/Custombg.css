@@ -1,5 +1,6 @@
-/* Custombg.css */
+@import "tailwindcss";
 
+/* --- Base Container --- */
 .custombg-container {
   position: relative;
   height: 100vh;
@@ -13,84 +14,72 @@
   padding: 0;
 }
 
-/* First Section */
+/* --- First Section --- */
 .first-section {
   position: absolute;
-  top: 1.75rem; /* top-7 */
-  width: 97%;
+  top: 1.75rem;
+  width: 95%;
   height: 60%;
-  /* max-height: 60%; */
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2xl);
-  border-radius: 1rem; /* rounded-2xl */
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25); /* drop-shadow-2xl */
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
   overflow: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.75rem 0; /* py-7 */
+  padding: 1.5rem;
+  gap: 1.5rem;
+  transition: clip-path 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  z-index: 10;
 }
 
+/* Clip-path Classes */
+.first {
+  clip-path: polygon(0 0, 50% 0, 55% 13%, 100% 13%, 100% 100%, 35% 100%, 30% 87%, 0 87%);
+  border-radius: 20px 0 0 0;
+}
+
+.second {
+  clip-path: polygon(0 0, 29.5% 0, 35% 20%, 100% 20%, 100% 100%, 0 100%);
+  border-radius: 0 0 20px 20px;
+}
+
+/* --- First Section Container & Text --- */
 .first-section-container {
   position: relative;
-  z-index: 10;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  margin-bottom: 100px;
-  margin-left: 50px;
-}
-
-.first-section-text {
-  max-width: 50rem; /* max-w-xl */
-  text-align: left;
+  margin-bottom: 40px;
+  z-index: 10;
 }
 
 .first-section-text h1 {
   font-weight: 800;
   color: white;
-  font-size: 3rem;
-}
-
-@media (min-width: 640px) {
-  .first-section-text h1 {
-    font-size: 5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .first-section-text h1 {
-    font-size: 6rem;
-  }
+  font-size: 5rem;
+  line-height: 1.1;
+  margin: 0;
 }
 
 .rotating-text {
   display: block;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   font-weight: 700;
   color: #f87171; /* text-red-500 */
-  font-size: 1rem;
-}
-
-@media (min-width: 640px) {
-  .rotating-text {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .rotating-text {
-    font-size: 3rem;
-  }
+  font-size: 2rem;
 }
 
 .first-section-desc {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 1.2rem;
-  width: 50rem;
-  background-color: rgba(55, 65, 81, 0.5); /* bg-gray-600/50 */
-  padding: 1.5rem;
+  width: 37vw;
+  background-color: rgba(55, 65, 81, 0.5);
+  padding: 1rem;
   border-radius: 1rem;
   color: white;
   transition: transform 0.3s ease-in-out;
@@ -100,29 +89,29 @@
   transform: scale(1.02);
 }
 
+/* --- Buttons --- */
 .buttons-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
-  margin-left: 0;
-  margin-right: 500px;
-
+  margin-right: 30%;
 }
 
 .buttons-container button,
 .buttons-container a {
   width: 100%;
-  max-width: 20rem;
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
+  max-width: 16rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   border-radius: 9999px;
   transition: all 0.3s ease-in-out;
   text-align: center;
 }
 
+/* --- Buttons Styles --- */
 .switch-profile-btn {
   background: linear-gradient(to right, #f3f4f6, #e5e7eb);
   color: #111827;
@@ -134,23 +123,13 @@
   transform: scale(1.02);
 }
 
-.download-cv-btn {
-  border: 2px solid #e5e7eb;
-  color: #e5e7eb;
-}
-
-.download-cv-btn:hover {
-  background-color: #e5e7eb;
-  color: #111827;
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(255,255,255,0.5);
-}
-
+.download-cv-btn,
 .contact-btn {
   border: 2px solid #e5e7eb;
   color: #e5e7eb;
 }
 
+.download-cv-btn:hover,
 .contact-btn:hover {
   background-color: #e5e7eb;
   color: #111827;
@@ -158,12 +137,24 @@
   box-shadow: 0 0 25px rgba(255,255,255,0.5);
 }
 
-/* Globe section */
+/* --- Globe --- */
 .globe-container {
   display: none;
 }
 
 @media (min-width: 1024px) {
+  .first-section {
+    flex-direction: row;
+    height: 60%;
+    padding: 2rem;
+  }
+
+  .first-section-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+  }
+
   .globe-container {
     display: flex;
     width: 33%;
@@ -174,35 +165,37 @@
   }
 }
 
-/* Contact Modal */
+/* --- Contact Modal --- */
 .contact-modal-backdrop {
   position: fixed;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50;
-  background: rgba(0,0,0,0.06);
-  backdrop-filter: blur(5px);
+  z-index: 9999;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px); /* Increased blur for mobile feel */
+  padding: 1rem;
 }
 
 .contact-modal {
-  background: linear-gradient(to bottom right, #9ca3af, #4b5563);
-  padding: 2rem;
+  background: linear-gradient(to bottom right, #1f2937, #374151);
+  padding: 1.5rem;
   border-radius: 1rem;
   width: 90%;
   max-width: 28rem;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-  border: 1px solid #374151;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  border: 1px solid #4b5563;
   transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
 }
 
 .contact-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.75rem;
+  right: 0.75rem;
   color: #9ca3af;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -218,12 +211,12 @@
   transform: scale(1.1);
 }
 
-/* Input styles */
+/* Inputs */
 .contact-input {
   width: 100%;
-  padding: 1rem 1rem 1rem 2.5rem;
+  padding: 0.9rem 1rem;
   border-radius: 1rem;
-  background: rgba(55,65,81,0.5);
+  background: rgba(55,65,81,0.6);
   border: 1px solid #4b5563;
   color: white;
   transition: all 0.2s ease-in-out;
@@ -232,18 +225,17 @@
 .contact-input:focus {
   outline: none;
   border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+  box-shadow: 0 0 10px rgba(59,130,246,0.3);
 }
 
-/* Textarea */
 .contact-textarea {
   resize: none;
-  height: 8rem;
+  height: 6rem;
 }
 
-/* Send button */
+/* Send Button */
 .send-btn {
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.5rem;
   background: linear-gradient(to right, #3b82f6, #06b6d4);
   color: white;
   font-weight: bold;
@@ -252,7 +244,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
   transition: all 0.3s ease-in-out;
 }
 
@@ -269,18 +261,19 @@
   cursor: not-allowed;
 }
 
+/* --- Notifications --- */
 .notification {
   position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 50;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-radius: 1rem;
   border-left-width: 0.25rem;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   transform: translateX(100%);
   animation: slide-in 0.3s forwards;
 }
@@ -298,18 +291,78 @@
 }
 
 @keyframes slide-in {
-  to {
-    transform: translateX(0);
-  }
+  to { transform: translateX(0); }
 }
 
-/* Second Section */
+/* --- Second Section --- */
 .second-section {
   position: absolute;
   top: 58%;
-  width: 97%;
+  width: 95%;
   height: 40%;
-  background-color: rgba(6,182,212,0.7); /* bg-cyan-800/70 */
+  background-color: rgba(6,182,212,0.7);
   border-radius: 1rem;
   backdrop-filter: blur(10px);
+  padding: 1rem;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 640px) {
+  /* Blur background after liquid chrome */
+  .custombg-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15,17,21,0.5);
+    backdrop-filter: blur(15px);
+    z-index: 5;
+  }
+
+  .first, .second, .nav {
+    clip-path: none !important;
+    border-radius: 0 !important;
+    padding: 1rem !important;
+    background: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .first-section {
+    width: 100%;
+    height: auto;
+    top: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+  }
+
+  .first-section-text h1 {
+    font-size: 2rem !important;
+  }
+
+  .rotating-text {
+    font-size: 1rem !important;
+  }
+
+  .first-section-desc {
+    font-size: 0.875rem !important;
+    padding: 0.75rem !important;
+    width: 100% !important;
+    margin-right: 0;
+  }
+
+  .buttons-container{
+    margin-right: 0;
+  }
+
+  .buttons-container button,
+  .buttons-container a {
+    font-size: 0.875rem !important;
+    padding: 0.75rem 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  .contact-modal {
+    width: 95% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+  }
 }
