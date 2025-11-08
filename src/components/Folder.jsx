@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const darkenColor = (hex, percent) => {
   let color = hex.startsWith('#') ? hex.slice(1) : hex;
@@ -25,15 +25,11 @@ const Folder = ({ color = '#5227FF', size = 1, className = '' }) => {
     Array.from({ length: maxItems }, () => ({ x: 0, y: 0 }))
   );
   const navigate = useNavigate();
+  const location = useLocation();
 
   const folderBackColor = darkenColor(color, 0.08);
 
-  // 🖼️ Replace these with your image paths
-  const paperImages = [
-    '/projects/2.png',
-    '/projects/3.png',
-    '/projects/1.png'
-  ];
+  const paperImages = ['/projects/2.png', '/projects/3.png', '/projects/1.png'];
 
   const handleClick = () => {
     setOpen(prev => !prev);
@@ -65,7 +61,12 @@ const Folder = ({ color = '#5227FF', size = 1, className = '' }) => {
   };
 
   const handleImageClick = () => {
-    navigate('/projects');
+    // 🧭 Navigate based on current route
+    if (location.pathname === '/gamedev') {
+      navigate('/projectsgame');
+    } else {
+      navigate('/projectsfull');
+    }
   };
 
   const scaleStyle = { transform: `scale(${size})` };
