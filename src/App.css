@@ -1,2 +1,16 @@
 @import "tailwindcss";
 
+
+.nav {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+  transition: clip-path 0.3s ease-in-out;
+}
+
+/* Optional hover effect (if you want it to animate slightly) */
+.nav:hover {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%);
+}
+
+
+
+/* 📱 Mobile */
