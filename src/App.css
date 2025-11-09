@@ -3,14 +3,14 @@
 @font-face {
   font-family: 'sign';
   /* src: url('assets/brusher/Brusher.ttf') format('truetype'); */
-  src: url('./Karstar Free.ttf') format('truetype');
+  src: url('./KarstarFree.ttf') format('truetype');
   /* src: url('assets/blowbrush/blowbrush.otf') format('opentype'); */
   font-weight:lighter;
 }
 @font-face {
   font-family: 'rest';
   /* src: url('assets/brusher/Brusher.ttf') format('truetype'); */
-  src: url('./mistake_note/Mistake Note.otf') format('opentype');
+  src: url('./mistake_note/MistakeNote.otf') format('opentype');
   /* src: url('assets/blowbrush/blowbrush.otf') format('opentype'); */
   font-weight: 10;
 }
