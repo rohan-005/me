@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'sign';
+  /* src: url('assets/brusher/Brusher.ttf') format('truetype'); */
+  src: url('./Karstar Free.ttf') format('truetype');
+  /* src: url('assets/blowbrush/blowbrush.otf') format('opentype'); */
+  font-weight:lighter;
+}
+@font-face {
+  font-family: 'rest';
+  /* src: url('assets/brusher/Brusher.ttf') format('truetype'); */
+  src: url('./mistake_note/Mistake Note.otf') format('opentype');
+  /* src: url('assets/blowbrush/blowbrush.otf') format('opentype'); */
+  font-weight: 10;
+}
 
 .nav {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
@@ -18,4 +32,14 @@
   .globe{
     display: none;
   }
+}
+
+.sign{
+  font-family: sign;
+  font-size: 200px;
+  color: black;
+}
+
+*{
+  font-family: rest;
 }

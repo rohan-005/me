@@ -282,7 +282,7 @@ const Gamedev = () => {
       )}
 
       <div className="second-section second">
-        <div className="folder-cont z-101">
+        <div className="folder-cont z-101 h-full">
           <span className="font-bold mb-10">PROJECTS</span>
           <Folder size={2} color="#3b82f6" />
         </div>
@@ -291,6 +291,9 @@ const Gamedev = () => {
           <div className="h-full w-full m-0">
             <FlowingMenu items={demoItems} />
           </div>
+        </div>
+        <div className="folder-cont z-101 h-[80%] mt-18 ">
+          <span className="font-bold mb-10 sign">Rohan</span>
         </div>
       </div>
     </div>
