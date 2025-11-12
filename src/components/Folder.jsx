@@ -27,7 +27,7 @@ const Folder = ({ color = '#5227FF', size = 1, className = '' }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const folderBackColor = darkenColor(color, 0.08);
+  const folderBackColor = darkenColor(color, 0.5);
 
   const paperImages = ['/projects/2.png', '/projects/3.png', '/projects/1.png'];
 

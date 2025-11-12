@@ -183,12 +183,12 @@ export function GlobeDemo() {
     },
     {
       order: 6,
-      startLat: 22.3193,
-      startLng: 114.1694,
+      startLat: -200.3193,
+      startLng: -100.1694,
       endLat: 51.5072,
       endLng: -0.1276,
       arcAlt: 0.3,
-      color: colors[Math.floor(Math.random() * (colors.length - 1))],
+      color: 'red',
     },
     {
       order: 7,
@@ -395,7 +395,7 @@ export function GlobeDemo() {
       <div className="absolute inset-0">
         <World data={sampleArcs} globeConfig={{
           ...globeConfig,
-          pointSize: 3,
+          pointSize: 8,
           globeColor: "#000",
           emissive: "#062056",
           emissiveIntensity: 0.15,
